@@ -21,7 +21,7 @@ See [action.yml](action.yml)
 - uses: actions/setup-node@v4
   with:
     # Version Spec of the version to use in SemVer notation.
-    # It also emits such aliases as lts, latest, nightly and canary builds
+    # It also admits such aliases as lts/*, latest, nightly and canary builds
     # Examples: 12.x, 10.15.1, >=10.15.0, lts/Hydrogen, 16-nightly, latest, node
     node-version: ''
 
@@ -203,6 +203,15 @@ If the runner is not able to access github.com, any Nodejs versions requested du
  - [Publishing to npmjs and GPR with npm](docs/advanced-usage.md#publish-to-npmjs-and-gpr-with-npm)
  - [Publishing to npmjs and GPR with yarn](docs/advanced-usage.md#publish-to-npmjs-and-gpr-with-yarn)
  - [Using private packages](docs/advanced-usage.md#use-private-packages)
+
+## Recommended permissions
+
+When using the `setup-node` action in your GitHub Actions workflow, it is recommended to set the following permissions to ensure proper functionality:
+
+```yaml
+permissions:
+  contents: read # access to check out code and install dependencies
+```
 
 ## License
 
